@@ -1,0 +1,33 @@
+<!-- <p>update-job works!</p> -->
+
+<div class = "col-md-6 offset-md-3">
+    <br>
+    <h3>Update Job</h3>
+    <hr>
+<form (ngSubmit) = "onSubmit()">
+
+    <div class = "form-group">
+        <label>Designation</label>
+        <input type = "text" class = "form-control" id = "jobDesignation" [(ngModel)] = "job.jobDesignation" name = "jobDesignation">
+    </div>
+
+    <div class = "form-group">
+        <label>Experience</label>
+        <input type = "text" class = "form-control" id = "jobExperience" [(ngModel)] = "job.jobExperience" name = "jobExperience">
+    </div>
+
+    <div class = "form-group">
+        <label>Salary</label>
+        <input type = "number" class = "form-control" id = "jobSalary" [(ngModel)] = "job.jobSalary" name = "jobSalary">
+    </div>
+
+    <div class = "form-group">
+        <label>Work Hours</label>
+        <input type = "number" class = "form-control" id = "jobWorkHours" [(ngModel)] = "job.jobWorkHours" name = "jobWorkHours">
+    </div>
+
+    <button class = "btn btn-success" type = "submit"> Update </button>
+
+</form>
+
+</div>

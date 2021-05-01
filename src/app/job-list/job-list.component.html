@@ -1,0 +1,34 @@
+<h2>Job List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <!-- <th>SlNo.</th> -->
+            <th> Designation </th>
+            <th> Experience </th>
+            <th> Salary </th>
+            <th> Work Hours </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let job of jobList">
+            <!-- <td> {{job.jobID}} </td> -->
+            <td> {{job.jobDesignation}} </td>
+            <td> {{job.jobExperience}} </td>
+            <td> {{job.jobSalary}} </td>
+            <td> {{job.jobWorkHours}} </td>
+            <td>
+                <button (click) = "updateJob(job.jobID)" class = "btn btn-info"> Update </button>
+            </td>
+            <td>
+                <button (click) = "deleteJob(job.jobID)" class = "btn btn-danger" style = "margin-left: 2px;"> Delete </button>
+            </td>
+            <td>
+                <button (click) = "viewJob(job.jobID)" class = "btn btn-success" style = "margin-left: 2px;"> View </button>
+            </td>
+        </tr>
+    </tbody>    
+
+</table>
+
+<h2 *ngFor = "let job of jobList">{{job.designation}}</h2>
