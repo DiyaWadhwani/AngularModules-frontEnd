@@ -12,9 +12,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ContainerComponent } from './component/container/container.component';
 import { UpdateJobComponent } from './update-job/update-job.component';
 import { ViewJobComponent } from './view-job/view-job.component';
-// import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
-// import { LoginEmployeeComponent } from './login-employee/login-employee.component';
-
+import { EmployeeLoginComponent } from './employee-login/employee-login.component';
+import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +25,10 @@ import { ViewJobComponent } from './view-job/view-job.component';
     ContainerComponent,
     UpdateJobComponent,
     ViewJobComponent,
-    // RegisterEmployeeComponent,
-    // LoginEmployeeComponent,
+    EmployeeLoginComponent,
+    EmployeeRegistrationComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

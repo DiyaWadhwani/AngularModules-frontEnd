@@ -1,0 +1,90 @@
+<!-- <p>employee-registration works!</p> -->
+<br><hr>
+<div class = "col-md-6 offset-md-3">
+    <div class = "border border-warning">
+        <br><h1 class = "text-center">Register</h1>
+        <br><h4 class = "text-center">Create new account</h4>
+        <h6 class = "text-center">Please enter the following details</h6><br>
+
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> First Name :</b></label>
+            <input type = "text" class = "form-control" id = "empFname" required #empFname = "ngModel" [(ngModel)] = "employee.empFname" placeholder="Enter your First Name">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Last Name :</b></label>
+            <input type = "text" class = "form-control" id = "empLname" [(ngModel)] = "employee.empLname" placeholder="Enter your Last Name">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Username :</b></label>
+            <input type = "text" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" placeholder="Create a Username">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Email :</b></label>
+            <input type = "text" class = "form-control" id = "empEmail" required #empEmail = "ngModel" [(ngModel)] = "employee.empEmail" placeholder="youremail@website.com">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Contact :</b></label>
+            <input type = "text" class = "form-control" id = "empContact" required #empContact = "ngModel" [(ngModel)] = "employee.empContact" placeholder="Enter your 10-digit Contact Number">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Company :</b></label>
+            <input type = "text" class = "form-control" id = "empCompany" required #empCompany = "ngModel" [(ngModel)] = "employee.empCompany" placeholder="Enter your Company">
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Designation :</b></label>
+            <input type = "text" class = "form-control" id = "empDesignation" required #empDesignation = "ngModel" [(ngModel)] = "employee.empDesignation" placeholder="Enter your Designation">        
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Password :</b></label>
+            <input type = "password" class = "form-control" id = "empPassword" required #empPassword = "ngModel" [(ngModel)] = "employee.empPassword" placeholder="Create a Password">
+            <span class = "help-block" *ngIf = "empPassword.touched && empPassword.errors?.required">
+                Password is required
+            </span>
+        </div>
+        </div>
+
+        <div class = "form-group">
+            <div class = "container">
+            <label> <b> Confirm Password :</b></label>
+            <input type = "password" class = "form-control" id = "empConfirmPassword" required #empConfirmPassword = "ngModel" [(ngModel)] = "employee.empConfirmPassword" placeholder="Re-enter your Password">
+            <span class = "help-block" *ngIf = "empConfirmPassword.touched && empConfirmPassword.errors?.required">
+                Please re-enter your password
+            </span>
+        </div>
+        </div>
+
+        <div class = "text-center">
+            <button (click) = "onSubmit()" class = "btn btn-success" type = "submit"> Register </button>
+            <br><br>
+
+            <p class = "text-danger"><b>{{showMessage}}</b></p>
+
+        </div>
+
+    </form>
+    </div>
+</div>

@@ -1,6 +1,4 @@
-import { logging } from "selenium-webdriver";
-
-export class EmployeeModel {
+export class EmployeeRegistrationModel {
 
     empID : number;
     empFname : string;
@@ -11,5 +9,6 @@ export class EmployeeModel {
     empCompany : string;
     empDesignation : string;
     empPassword : string;
-
+    empConfirmPassword : string;
+    
 }

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ObservedValueOf } from 'rxjs';
+import { EmployeeLoginModel } from '../models/employee-login-model.model';
 import { JobModel } from '../models/job-model.model';
 
 const headers = new HttpHeaders()
@@ -19,7 +20,7 @@ export class JobService {
   createJob(job: JobModel) : Observable<Object> {
     let body = JSON.stringify(job);
     console.log("this is body "+body);
-    return this.httpClient.post(`${this.baseURL}`, body, {headers});
+    return this.httpClient.post<Object>(`${this.baseURL}`, body, {headers});
   }
 
   getJobByID( jobID : number) : Observable<JobModel> {
