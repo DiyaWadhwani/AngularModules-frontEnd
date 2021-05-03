@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { JobModel } from '../models/job-model.model';
-import { JobService } from '../service/job.service';
+import { JobModel } from 'src/app/models/job-model.model';
+import { JobService } from 'src/app/service/job.service';
+
 
 @Component({
   selector: 'app-job-list',
@@ -21,6 +22,10 @@ export class JobListComponent implements OnInit {
     this.jobService.getJobList().subscribe( data => {
       this.jobList = data;
     });
+  }
+
+  createJob(){
+    this.router.navigate(['create-job']);
   }
   
   updateJob(jobID : number) {

@@ -1,9 +1,9 @@
 <!-- <p>employee-login works!</p> -->
-<br><hr>
+<hr><br>
 <div class = "col-md-6 offset-md-3">
     <div class = "border border-warning">
         <br><h1 class = "text-center">Login</h1>
-        <br><h4 class = "text-center">Please enter the following details !</h4><br>
+        <br><h4 class = "text-center">Please enter the following details</h4><br>
     <form (ngSubmit) = "onSubmit(buttonType)">
 
         <div class = "form-group">
@@ -48,12 +48,12 @@
         <div class = "text-center">
             
 
-            <button (click) = "onSubmit('Login')" class = "btn btn-success" type = "submit" style="margin-right: 30px;"> LOGIN </button>
+            <button (click) = "onSubmit('Login')" class = "btn btn-success" type = "submit" style="margin-right: 30px;"> <b>LOGIN</b> </button>
             <!-- <br><br> -->
             <!-- OR<br> -->
             <!-- <a routerLink = "employee-login/employee-registration">Create new account</a> -->
             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-            <button (click) = "onSubmit('Register')" class = "btn btn-info" type = "submit" style="margin-left: 30px;"> REGISTER </button>
+            <button (click) = "onSubmit('Register')" class = "btn btn-info" type = "submit" style="margin-left: 30px;"> <b>REGISTER</b> </button>
             <br><br>
            
             <p class = "text-danger"><b>{{showMessage}}</b></p>

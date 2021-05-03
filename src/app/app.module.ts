@@ -4,16 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JobListComponent } from './job-list/job-list.component';
-import { CreateJobComponent } from './create-job/create-job.component';
+import { JobListComponent } from './component/job-list/job-list.component';
+import { CreateJobComponent } from './component/create-job/create-job.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ContainerComponent } from './component/container/container.component';
-import { UpdateJobComponent } from './update-job/update-job.component';
-import { ViewJobComponent } from './view-job/view-job.component';
-import { EmployeeLoginComponent } from './employee-login/employee-login.component';
-import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
+import { UpdateJobComponent } from './component/update-job/update-job.component';
+import { ViewJobComponent } from './component/view-job/view-job.component';
+import { EmployeeLoginComponent } from './component/employee-login/employee-login.component';
+import { EmployeeRegistrationComponent } from './component/employee-registration/employee-registration.component';
 
 @NgModule({
   declarations: [

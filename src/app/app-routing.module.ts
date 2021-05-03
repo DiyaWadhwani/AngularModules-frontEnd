@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateJobComponent } from './create-job/create-job.component';
-import { EmployeeLoginComponent } from './employee-login/employee-login.component';
-import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
-import { JobListComponent } from './job-list/job-list.component';
-import { UpdateJobComponent } from './update-job/update-job.component';
-import { ViewJobComponent } from './view-job/view-job.component';
+import { CreateJobComponent } from './component/create-job/create-job.component';
+import { EmployeeLoginComponent } from './component/employee-login/employee-login.component';
+import { EmployeeRegistrationComponent } from './component/employee-registration/employee-registration.component';
+import { JobListComponent } from './component/job-list/job-list.component';
+import { UpdateJobComponent } from './component/update-job/update-job.component';
+import { ViewJobComponent } from './component/view-job/view-job.component';
 
 const routes: Routes = [
   {path : 'employee-login', component : EmployeeLoginComponent},

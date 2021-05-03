@@ -9,6 +9,7 @@ export class ContainerComponent implements OnInit {
 
   constructor() { }
 
+  function : string;
   title = "Wolken Job Portal";
 
   ngOnInit(): void {

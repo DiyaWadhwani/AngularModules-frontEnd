@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { JobModel } from '../models/job-model.model';
-import { JobService } from '../service/job.service';
+import { JobModel } from 'src/app/models/job-model.model';
+import { JobService } from 'src/app/service/job.service';
 
 @Component({
   selector: 'app-create-job',
@@ -11,6 +11,7 @@ import { JobService } from '../service/job.service';
 export class CreateJobComponent implements OnInit {
 
   job : JobModel = new JobModel();
+  showMessage : string = " ";
 
   constructor(private jobService : JobService, private router : Router) { }
 
@@ -22,7 +23,10 @@ export class CreateJobComponent implements OnInit {
       console.log(data);
       this.goToJobList();
     },
-    error => console.log(error));
+    error => {
+      this.showMessage = "Please enter valid details";
+      console.log(error)}
+    );
   }
 
   goToJobList() {

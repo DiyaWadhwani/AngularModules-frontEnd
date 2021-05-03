@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EmployeeLoginModel } from '../models/employee-login-model.model';
-import { LoginService } from '../service/login.service';
+import { EmployeeLoginModel } from 'src/app/models/employee-login-model.model';
+import { LoginService } from 'src/app/service/login.service';
+
 
 @Component({
   selector: 'app-employee-login',

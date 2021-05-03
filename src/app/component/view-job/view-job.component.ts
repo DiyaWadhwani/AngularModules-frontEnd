@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { JobModel } from '../models/job-model.model';
-import { JobService } from '../service/job.service';
+import { JobModel } from 'src/app/models/job-model.model';
+import { JobService } from 'src/app/service/job.service';
+
 
 @Component({
   selector: 'app-view-job',
