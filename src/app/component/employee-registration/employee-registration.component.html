@@ -9,72 +9,70 @@
     <form (ngSubmit) = "onSubmit()">
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> First Name :</b></label>
-            <input type = "text" class = "form-control" id = "empFname" required #empFname = "ngModel" [(ngModel)] = "employee.empFname" minlength = "3" maxlength="15" placeholder="Enter your First Name">
+            <input type = "text" name = "empFname" class = "form-control" id = "empFname" required #empFname = "ngModel" [(ngModel)] = "employee.empFname" minlength = "3" maxlength="25" placeholder="Enter your First Name" pattern = "^[A-Z][a-zA-Z]*">
             <div *ngIf="empFname.errors && (empFname.dirty || empFname.touched)" style="color: red;">
                 <div [hidden]="!empFname.errors.required">
                     First Name is a required field
                 </div>
                 <div [hidden]="!empFname.errors.minlength">
-                    First Name cannot be less than 6 characters
+                    First Name cannot be less than 3 characters
                 </div>
                 <div [hidden]="!empFname.errors.maxlength">
-                    First Name cannot be more than 20 characters
+                    First Name cannot be more than 25 characters
                 </div>
                 <div [hidden]="!empFname.errors.pattern">
-                    First Name does not match the pattern
+                    First Name must start with an upper case and can contain both alphabets and white spaces
                 </div>
             </div>
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Last Name :</b></label>
-            <input type = "text" class = "form-control" id = "empLname" [(ngModel)] = "employee.empLname" placeholder="Enter your Last Name">
-            <!-- <div *ngIf="empFname.errors && (empFname.dirty || empFname.touched)" style="color: red;">
-                <div [hidden]="!empFname.errors.required">
-                    Last Name is a required field
+            <input type = "text" name = "empLname" class = "form-control" id = "empLname" #empLname = "ngModel" [(ngModel)] = "employee.empLname" minlength="0" maxlength="30" placeholder="Enter your Last Name" pattern = "^[A-Z][a-zA-Z]*">
+
+            <div *ngIf = "empLname.errors && (empLname.dirty || empLname.touched)" style="color: red;">
+                <div [hidden] = "!empLname.errors.maxlength">
+                    Last Name cannot be more than 30 characters
                 </div>
-                <div [hidden]="!empFname.errors.minlength">
-                    Last Name cannot be less than 6 characters
+                <div [hidden] = "!empLname.errors.pattern">
+                    Last Name must start with an upper case and can contain both alphabets and white spaces
                 </div>
-                <div [hidden]="!empFname.errors.maxlength">
-                    Last Name cannot be more than 20 characters
-                </div>
-                <div [hidden]="!empFname.errors.pattern">
-                    Last Name does not match the pattern
-                </div>
-            </div> -->
+            </div>
+
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Username :</b></label>
-            <input type = "text" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" minlength = "3" maxlength="25" placeholder="Create a Username">
+            <input type = "text" name = "empUname" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" minlength="3" maxlength = "25" placeholder="Create a Username" pattern = "[a-zA-Z0-9 ]*">
+        
             <div *ngIf="empUname.errors && (empUname.dirty || empUname.touched)" style="color: red;">
                 <div [hidden]="!empUname.errors.required">
-                    Username is a required field
+                    Username is a required field.
                 </div>
                 <div [hidden]="!empUname.errors.minlength">
-                    Username cannot be less than 6 characters
+                    Username cannot be less than 3 characters.
                 </div>
                 <div [hidden]="!empUname.errors.maxlength">
-                    Username cannot be more than 20 characters
+                    Username cannot be more than 25 characters.
                 </div>
                 <div [hidden]="!empUname.errors.pattern">
-                    Username does not match the pattern
+                    Username can have only alphabets and numbers.
                 </div>
             </div>
+
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Email :</b></label>
-            <input type = "text" class = "form-control" id = "empEmail" required #empEmail = "ngModel" [(ngModel)] = "employee.empEmail" minlength="10" placeholder="youremail@website.com">
+            <input type = "text" name = "empEmail" class = "form-control" id = "empEmail" required #empEmail = "ngModel" [(ngModel)] = "employee.empEmail" minlength="10" placeholder="youremail@website.com" pattern = "^[a-z]*@[a-z]*.com">
             <div *ngIf="empEmail.errors && (empEmail.dirty || empEmail.touched)" style="color: red;">
                 <div [hidden]="!empEmail.errors.required">
                     Email is a required field
@@ -82,17 +80,17 @@
                 <div [hidden]="!empEmail.errors.minlength">
                     Email cannot be less than 10 characters
                 </div>
-                <!-- <div [hidden]="!empEmail.errors.pattern">
-                    Email does not match the pattern
-                </div> -->
+                <div [hidden]="!empEmail.errors.pattern">
+                    Email must be of format ***@**.com
+                </div>
             </div>
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Contact :</b></label>
-            <input type = "text" class = "form-control" id = "empContact" required #empContact = "ngModel" [(ngModel)] = "employee.empContact" minlength = "10" maxlength = "10" placeholder="Enter your 10-digit Contact Number">
+            <input type = "text" name = "empContact" class = "form-control" id = "empContact" required #empContact = "ngModel" [(ngModel)] = "employee.empContact" minlength = "10" maxlength = "10" placeholder="Enter your 10-digit Contact Number" pattern = "[0-9]*">
             <div *ngIf="empContact.errors && (empContact.dirty || empContact.touched)" style="color: red;">
                 <div [hidden]="!empContact.errors.required">
                     Contact is a required field
@@ -108,9 +106,9 @@
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Company :</b></label>
-            <input type = "text" class = "form-control" id = "empCompany" required #empCompany = "ngModel" [(ngModel)] = "employee.empCompany" minlength="3" placeholder="Enter your Company">
+            <input type = "text" name = "empCompany" class = "form-control" id = "empCompany" required #empCompany = "ngModel" [(ngModel)] = "employee.empCompany" minlength="3" placeholder="Enter your Company" pattern = "^[A-Z][a-zA-Z\s]*">
             <div *ngIf="empCompany.errors && (empCompany.dirty || empCompany.touched)" style="color: red;">
                 <div [hidden]="!empCompany.errors.required">
                     Company is a required field
@@ -118,14 +116,17 @@
                 <div [hidden]="!empCompany.errors.minlength">
                     Company cannot be less than 3 characters
                 </div>
+                <div [hidden] = "!empCompany.errors.pattern">
+                    Company must start with an upper case and can contain both alphabets and white spaces
+                </div>
             </div>
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Designation :</b></label>
-            <input type = "text" class = "form-control" id = "empDesignation" required #empDesignation = "ngModel" [(ngModel)] = "employee.empDesignation" minlength="3" placeholder="Enter your Designation">
+            <input type = "text" name = "empDesignation" class = "form-control" id = "empDesignation" required #empDesignation = "ngModel" [(ngModel)] = "employee.empDesignation" minlength="3" placeholder="Enter your Designation" pattern = "^[A-Z][a-zA-Z\s]*">
             <div *ngIf="empDesignation.errors && (empDesignation.dirty || empDesignation.touched)" style="color: red;">
                 <div [hidden]="!empDesignation.errors.required">
                     Designation is a required field
@@ -133,14 +134,17 @@
                 <div [hidden]="!empDesignation.errors.minlength">
                     Designation cannot be less than 3 characters
                 </div>
+                <div [hidden] = "!empDesignation.errors.pattern">
+                    Designation must start with an upper case and can contain both alphabets and white spaces
+                </div>
             </div>
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Password :</b></label>
-            <input type = "password" class = "form-control" id = "empPassword" required #empPassword = "ngModel" [(ngModel)] = "employee.empPassword" minlength="6" maxlength="25" placeholder="Create a Password">
+            <input type = "password" name = "empPassword" class = "form-control" id = "empPassword" required #empPassword = "ngModel" [(ngModel)] = "employee.empPassword" minlength="6" maxlength="25" placeholder="Create a Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,25}">
             <div *ngIf="empPassword.errors && (empPassword.dirty || empPassword.touched)" style="color: red;">
                 <div [hidden]="!empPassword.errors.required">
                     Password is a required field
@@ -152,16 +156,16 @@
                     Password cannot be more than 25 characters
                 </div>
                 <div [hidden]="!empPassword.errors.pattern">
-                    Password does not match the pattern
+                    Password must contain atleast 1 uppercase alphabet, 1 lowercase alphabet and 1 digit. No special characters allowed
                 </div>
             </div>
         </div>
         </div>
 
         <div class = "form-group">
-            <div class = "container">
+            <div class = "col-md-10 offset-md-1">
             <label> <b> Confirm Password :</b></label>
-            <input type = "password" class = "form-control" id = "empConfirmPassword" required #empConfirmPassword = "ngModel" [(ngModel)] = "employee.empConfirmPassword" minlength="6" maxlength="25" placeholder="Re-enter your Password">
+            <input type = "password" name = "empConfirmPassword" class = "form-control" id = "empConfirmPassword" required #empConfirmPassword = "ngModel" [(ngModel)] = "employee.empConfirmPassword" minlength="6" maxlength="25" placeholder="Re-enter your Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,25}">
             <div *ngIf="empConfirmPassword.errors && (empConfirmPassword.dirty || empConfirmPassword.touched)" style="color: red;">
                 <div [hidden]="!empConfirmPassword.errors.required">
                     Passwords do not match
@@ -179,8 +183,13 @@
         </div>
         </div>
 
-        <div class = "text-center">
-            <button class = "btn btn-success" type = "submit"> <b>REGISTER</b> </button>
+
+        <!-- <div class = "container"> -->
+            <div class = "text-center"> <br>
+            <!-- <button class = "btn btn-info" type = "reset" style="margin-left: 125px;"> <b>RESET</b> </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class = "btn btn-success" type = "submit" style = "margin-left: 70px;"> <b>REGISTER</b> </button> -->
+            <button class = "btn btn-success" type = "submit"><b>REGISTER</b> </button>
             <br><br>
 
             <p class = "text-danger"><b>{{showMessage}}</b></p>

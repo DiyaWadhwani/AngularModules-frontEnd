@@ -9,20 +9,20 @@
         <div class = "form-group">
             <div class = "col-md-8 offset-md-2">
             <label> <b> Username :</b></label>
-            <input type = "text" name = "username" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" minlength="3" maxlength = "25" pattern = "(?=.*[a-z])(?=.*[A-Z])">
+            <input type = "text" name = "username" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" minlength="3" maxlength = "25" pattern = "[a-zA-Z0-9 ]*">
         
             <div *ngIf="empUname.errors && (empUname.dirty || empUname.touched)" style="color: red;">
                 <div [hidden]="!empUname.errors.required">
-                    Name is a required field.
+                    Username is a required field.
                 </div>
                 <div [hidden]="!empUname.errors.minlength">
-                    Name cannot be less than 3 characters.
+                    Username cannot be less than 3 characters.
                 </div>
                 <div [hidden]="!empUname.errors.maxlength">
-                    Name cannot be more than 25 characters.
+                    Username cannot be more than 25 characters.
                 </div>
                 <div [hidden]="!empUname.errors.pattern">
-                    Name does not match the pattern (Only alphabets allowed).
+                    Username can have only alphabets and numbers.
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
             <div class = "col-md-8 offset-md-2">
                 <label> <b> Password :</b></label>
                 
-                <input type = "password" class = "form-control" id = "empPassword" required #empPassword="ngModel" [(ngModel)] = "employee.empPassword" minlength="6" maxlength="25" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){6,32}$">
+                <input type = "password" class = "form-control" id = "empPassword" required #empPassword="ngModel" [(ngModel)] = "employee.empPassword" minlength="6" maxlength="25" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,25}">
                 <div *ngIf="empPassword.errors && (empPassword.dirty || empPassword.touched)" style="color: red;">
                     <div [hidden]="!empPassword.errors.required">
                         Password is a required field
@@ -46,7 +46,7 @@
                         Password cannot be more than 20 characters
                     </div>
                     <div [hidden]="!empPassword.errors.pattern">
-                        Password does not match the pattern
+                        Password must contain atleast 1 uppercase alphabet, 1 lowercase alphabet and 1 digit
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <!-- OR<br> -->
             <!-- <a routerLink = "employee-login/employee-registration">Create new account</a> -->
             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-            <button (click) = "onSubmit('Register')" class = "btn btn-info" type = "submit" style="margin-left: 30px;"> <b>REGISTER</b> </button>
+            <!-- <button (click) = "onSubmit('Register')" class = "btn btn-info" type = "submit" style="margin-left: 30px;"> <b>REGISTER</b> </button> -->
             <br><br>
            
             <p class = "text-danger"><b>{{showMessage}}</b></p>

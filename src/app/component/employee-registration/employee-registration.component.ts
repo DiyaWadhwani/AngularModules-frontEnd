@@ -20,15 +20,28 @@ export class EmployeeRegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.registerService.registerEmployee(this.employee).subscribe(data=> {
-      console.log("new user registered !");
-    this.router.navigate(['/employee-login']);
-    },
-    error => {
-      this.showMessage = "Please enter valid data";
-      console.log(error);
+
+    if(this.employee.empPassword != this.employee.empConfirmPassword) {
+      console.log("Password : "+this.employee.empPassword);
+      console.log("Conf Password : "+this.employee.empConfirmPassword);
+      console.log("Passwords do not match");
+      this.showMessage = "Passwords do not match";
     }
-    );
+    // else if(this.employee.empFname || this.employee.empUname || this.employee.empEmail || this.employee.empContact || this.employee.empCompany || this.employee.empDesignation || this.employee.empPassword || this.employee.empConfirmPassword) {
+
+    // }
+    else {
+      this.registerService.registerEmployee(this.employee).subscribe(data=> {
+        console.log("new user registered !");
+      this.router.navigate(['/employee-login']);
+      },
+      error => {
+        this.showMessage = "User already exists";
+        console.log(error);
+      }
+      );
+    }
+    
     
   }
 }
