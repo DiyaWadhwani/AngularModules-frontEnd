@@ -9,26 +9,22 @@
         <div class = "form-group">
             <div class = "col-md-8 offset-md-2">
             <label> <b> Username :</b></label>
-            <input type = "text" name = "username" class = "form-control" id = "empUname" required #name = "ngModel" [(ngModel)] = "employee.empUname" minlength="3">
-            
-            <!-- <span class = "help-block" *ngIf = "employee.empUname.touched && employee.empUname.errors?.required">
-                Please re-enter your password
-            </span> -->
-
-            <!-- <div *ngIf="employee.empUname.errors && (employee.empUname.dirty || employee.empUname.touched)">
-                <div [hidden]="!name.errors.required">
+            <input type = "text" name = "username" class = "form-control" id = "empUname" required #empUname = "ngModel" [(ngModel)] = "employee.empUname" minlength="3" maxlength = "25" pattern = "(?=.*[a-z])(?=.*[A-Z])">
+        
+            <div *ngIf="empUname.errors && (empUname.dirty || empUname.touched)" style="color: red;">
+                <div [hidden]="!empUname.errors.required">
                     Name is a required field.
                 </div>
-                <div [hidden]="!name.errors.minlength">
-                    Name cannot be less than 6 characters.
+                <div [hidden]="!empUname.errors.minlength">
+                    Name cannot be less than 3 characters.
                 </div>
-                <div [hidden]="!name.errors.maxlength">
-                    Name cannot be more than 20 characters.
+                <div [hidden]="!empUname.errors.maxlength">
+                    Name cannot be more than 25 characters.
                 </div>
-                <div [hidden]="!name.errors.pattern">
+                <div [hidden]="!empUname.errors.pattern">
                     Name does not match the pattern (Only alphabets allowed).
                 </div>
-            </div> -->
+            </div>
 
         </div>
         </div>
@@ -38,7 +34,21 @@
             <div class = "col-md-8 offset-md-2">
                 <label> <b> Password :</b></label>
                 
-                <input type = "password" class = "form-control" id = "empPassword" required #name="ngModel" [(ngModel)] = "employee.empPassword" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){6,32}$">
+                <input type = "password" class = "form-control" id = "empPassword" required #empPassword="ngModel" [(ngModel)] = "employee.empPassword" minlength="6" maxlength="25" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){6,32}$">
+                <div *ngIf="empPassword.errors && (empPassword.dirty || empPassword.touched)" style="color: red;">
+                    <div [hidden]="!empPassword.errors.required">
+                        Password is a required field
+                    </div>
+                    <div [hidden]="!empPassword.errors.minlength">
+                        Password cannot be less than 6 characters
+                    </div>
+                    <div [hidden]="!empPassword.errors.maxlength">
+                        Password cannot be more than 20 characters
+                    </div>
+                    <div [hidden]="!empPassword.errors.pattern">
+                        Password does not match the pattern
+                    </div>
+                </div>
             </div>
             </div>
         

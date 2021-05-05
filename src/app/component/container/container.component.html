@@ -11,9 +11,12 @@
     </ul> -->
     <ul class = "navbar-nav ml-auto">
         <li class = "nav-item">
-            <a routerLink = "employee-login" routerLinkActive = "active" class = "nav-link">Logout</a>
+            <a *ngIf = "navDisplay == 'Login' " routerLink = "employee-login" routerLinkActive = "active" class = "nav-link">Register</a>
+            <a *ngIf = "navDisplay == 'Register' " routerLink = "employee-registration" routerLinkActive = "active" class = "nav-link">Login</a>
+            
         </li>
     </ul>
+
 </nav>
 
 <br>
